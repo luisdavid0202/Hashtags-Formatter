@@ -33,18 +33,36 @@
                     </TextBox>
                 </StackPanel>
 
-                <Button
-                    Grid.Column="1"
+                <StackPanel 
+                    Grid.Column="1" 
                     HorizontalAlignment="Center"
-                    Background="Transparent"
-                    Click="Button_Click">
-                    <Button.Content>
-                        <FontIcon
-                        FontFamily="Segoe MDL2 Assets"
-                        Glyph="&#xe9f3;"                            
-                        HorizontalAlignment="Center"/>
-                    </Button.Content>
-                </Button>
+                    Orientation="Vertical"
+                    VerticalAlignment="Center">
+                    <Button                    
+                        Background="Transparent"
+                        Click="Button_Click">
+                        <Button.Content>
+                            <FontIcon
+                            FontFamily="Segoe MDL2 Assets"
+                            Glyph="&#xe9f3;"                            
+                            HorizontalAlignment="Center"/>
+                        </Button.Content>
+                    </Button>
+
+                    <Button                        
+                        x:Name="ClearButton"                        
+                        Background="Transparent"
+                        Click="ClearButton_Click">
+                        <Button.Content>
+                            <FontIcon
+                                FontFamily="Segoe MDL2 Assets"
+                                Glyph="&#xED62;"                            
+                                HorizontalAlignment="Center"/>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+
+                
 
                 <StackPanel Grid.Column="2">                    
                     <TextBox

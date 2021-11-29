@@ -24,7 +24,7 @@ namespace HashtagsFormatter
             }
 
             var rnd = new Random();
-            var randomizedList = unformattedHashtags.OrderBy(x => rnd.Next());
+            var randomizedList = unformattedHashtags.OrderBy(x => rnd.Next()).Distinct().ToList();
 
             var sb = new StringBuilder();
             int count = 0;
@@ -39,9 +39,15 @@ namespace HashtagsFormatter
                 }
             }
 
-            this.consoleOutput.Text = $"{this.consoleOutput.Text}- Done. {Environment.NewLine}";
+            this.consoleOutput.Text = $"{this.consoleOutput.Text}- Done. {randomizedList.Count} hashtags found. {Environment.NewLine}";
 
-            this.hashtagsOutput.Text = sb.ToString().Trim();
+            this.hashtagsOutput.Text = sb.ToString().Trim();            
+        }
+
+        private void ClearButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.hashtagsInput.Text = string.Empty;
+            this.hashtagsOutput.Text = string.Empty;
         }
     }
 }
